@@ -1,18 +1,8 @@
-def my_gen():
-	n =1 
-	print 'This is first '
-	yield n
-	
-	n +=1
-	print 'This is second'
-	yield n
+def fib(limit):
+	a,b = 0 ,1
+	while a < limit:
+		yield a
+		a, b = b, a+b
 
-	n +=1
-	print 'This is third'
-	yield n
-
-a = my_gen()
-next(a)
-next(a)
-next(a)
-next(a)
+for i in fib(5):
+	print i
